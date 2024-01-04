@@ -7,10 +7,11 @@
     <style>
         body {
             text-align: center;
-            color: red;
             font-size: 18px;
             font-weight: bold;
             animation: rainbowBackground 10s infinite;
+            transition: color 0.1s ease; /* Smooth transition for color changes */
+            color: white;
         }
 
         #im3ra {
@@ -23,13 +24,11 @@
 
         #donationAddress {
             font-size: 14px;
-            color: white;
             margin-bottom: 20px;
         }
 
         #contactInfo {
             font-size: 16px;
-            color: white;
             margin-top: 20px;
         }
 
@@ -42,6 +41,10 @@
             83.33% { background-color: orange; }
             100% { background-color: red; }
         }
+
+        .colorChange {
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +52,7 @@
     <div id="dateTime"></div>
     <div id="donationAddress">Donate ETH: 0xB613C977BcE0849663Ba61C089a026bAEa64330d</div>
 
-    <div id="contactInfo">
+    <div id="contactInfo" class="colorChange">
         <p>Contact me:</p>
         <p>Email: <a href="mailto:era9nda@gmail.com">era9nda@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/0783262018">0783262018</a></p>
@@ -70,6 +73,11 @@
 
         // Update every second
         setInterval(updateDateTime, 1000);
+
+        // Toggle color change every 0.1 seconds
+        setInterval(function() {
+            document.getElementById('contactInfo').classList.toggle('colorChange');
+        }, 100);
     </script>
 </body>
 </html>
