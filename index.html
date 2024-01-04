@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Page</title>
+    <title>Dynamic Date and Time</title>
     <style>
         body {
             text-align: center;
             color: red;
+            font-size: 18px;
+            font-weight: bold;
             animation: rainbowBackground 10s infinite;
         }
 
         #im3ra {
             font-size: 60px;
-            font-weight: bold;
         }
 
         @keyframes rainbowBackground {
@@ -29,5 +30,22 @@
 </head>
 <body>
     <div id="im3ra">im 3ra</div>
+    <div id="dateTime"></div>
+
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var day = now.toLocaleDateString('en-US', { weekday: 'long' });
+            var time = now.toLocaleTimeString('en-US');
+            var dateTimeString = day + ' ' + time;
+            document.getElementById('dateTime').textContent = dateTimeString;
+        }
+
+        // Initial update
+        updateDateTime();
+
+        // Update every second
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
