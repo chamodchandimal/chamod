@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <title>Rainbow Page</title>
     <style>
         body {
             text-align: center;
-            background-color: black;
             color: red;
+            animation: rainbowBackground 10s infinite;
         }
 
         #im3ra {
             font-size: 60px;
             font-weight: bold;
+        }
+
+        @keyframes rainbowBackground {
+            0% { background-color: violet; }
+            16.66% { background-color: indigo; }
+            33.33% { background-color: blue; }
+            50% { background-color: green; }
+            66.66% { background-color: yellow; }
+            83.33% { background-color: orange; }
+            100% { background-color: red; }
         }
     </style>
 </head>
